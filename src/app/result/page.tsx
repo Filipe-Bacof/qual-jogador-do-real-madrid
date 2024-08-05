@@ -20,7 +20,7 @@ export default function Result() {
         <>
           <Image
             className="w-60 h-auto rounded-md"
-            src={players[randomIndex].picture}
+            src={`/assets/${randomIndex}.jpg`}
             alt={`Imagem de ${players[randomIndex].nome}`}
             width={1000}
             height={1000}
