@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function LucaModric() {
+export default function Result() {
   return (
     <main className="flex flex-col items-center my-8 gap-4">
       <Image

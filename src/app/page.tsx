@@ -59,7 +59,7 @@ export default function Home() {
         }),
       });
 
-      // router.push("/luka-modric");
+      router.push("/result");
     } catch (error) {
       // console.error(error);
       console.error("Não foi possível calcular, tente novamente!");
