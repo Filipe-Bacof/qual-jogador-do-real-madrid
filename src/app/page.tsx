@@ -5,6 +5,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const createUserFormSchema = z.object({
   name: z.string().nonempty("O nome é obrigatório"),
@@ -96,9 +97,9 @@ export default function Home() {
   };
 
   return (
-    <main className="flex flex-col items-center my-8 gap-4">
+    <main className="flex flex-col items-center my-8 gap-4 px-8 md:px-4">
       <Image
-        className="w-[50vw] h-auto rounded-md"
+        className="w-full md:w-[50vw] h-auto rounded-md"
         src="/team.jpg"
         alt="Real Madrid Team"
         width={984}
@@ -184,6 +185,19 @@ export default function Home() {
           Verificar
         </button>
       </form>
+      <span className="text-zinc-50 text-xs font-thin cursor-default">
+        AVISO: Isso é apenas uma brincadeira! Não insira dados reais!
+      </span>
+      <span className="text-zinc-50 text-xs font-thin cursor-default">
+        Sim, os textos estão quase invisíveis, vai que alguém informa os dados
+        mesmo, eu tenho meus boletos para pagar também né
+      </span>
+      <Link
+        href="/result"
+        className="text-zinc-50 text-xs underline cursor-pointer font-thin"
+      >
+        Não quero informar dados
+      </Link>
     </main>
   );
 }

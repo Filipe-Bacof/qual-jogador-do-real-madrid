@@ -20,7 +20,7 @@ export default function Result() {
         <>
           <Image
             className="w-60 h-auto rounded-md"
-            src={`/assets/${randomIndex}.jpg`}
+            src={`/assets/${players[randomIndex].id}.jpg`}
             alt={`Imagem de ${players[randomIndex].nome}`}
             width={1000}
             height={1000}
@@ -29,6 +29,10 @@ export default function Result() {
           <h1 className="text-center text-lg font-semibold">
             Você tirou: {players[randomIndex].nome}
           </h1>
+          <span>Idade: {players[randomIndex].idade}</span>
+          <span>Altura: {players[randomIndex].altura}</span>
+          <span>Peso: {players[randomIndex].peso}</span>
+          <span>Nacionalidade: {players[randomIndex].nacionalidade}</span>
         </>
       ) : (
         <p>Carregando...</p>
